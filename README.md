@@ -1,6 +1,11 @@
 # CatFlow
 flutter super lightweight state management
 
+## Language
+[English](https://github.com/Jon-Millent/cat_flow/blob/main/README.md)
+[中文](https://github.com/Jon-Millent/cat_flow/blob/main/README.zh-cn.md)
+
+
 ## Features
 
 * lightweight
@@ -142,3 +147,6 @@ class TemplatePageState extends State<TemplatePage> {
   }
 }
 ```
+
+## License
+MIT 
