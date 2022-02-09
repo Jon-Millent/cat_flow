@@ -1,7 +1,7 @@
 name: cat_flow
-description: A new Flutter project.
+description: flutter super lightweight state management
 version: 0.0.1
-homepage:
+homepage: https://github.com/Jon-Millent/cat_flow
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
