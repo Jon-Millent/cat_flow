@@ -1,39 +1,144 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# CatFlow
+flutter super lightweight state management
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+* lightweight
+* Non-intrusive state management
+* easy to use
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+#### install
+```yaml
+dependencies:
+  cat_flow: version
+```
+#### import
+```dart
+import 'package:cat_flow/cat.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:cat_flow/cat.dart';
+
+// controller
+class MyController extends CatController {
+  CatRx<int> count = CatRx<int>(0);
+
+  void changeCount() {
+    count.value++;
+    count.update();
+  }
+}
+
+// view
+// ...
+Widget build(BuildContext context) {
+  //...
+  CatView.render(controller.count, () {
+    return Text(
+      controller.count.value.toString(),
+    );
+  });
+  //...
+  floatingActionButton: FloatingActionButton(
+    onPressed: () {
+      controller.changeCount();
+    },
+    tooltip: 'Increment',
+    child: const Icon(Icons.add),
+  );
+  //...
+}
+// ...
 ```
 
-## Additional information
+## Document
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+#### CatRx
+
+Initialization data
+```dart
+CatRx<int> count = CatRx<int>(0);
+CatRx<bool> isLoading = CatRx<bool>(false);
+```
+
+update date and view
+```dart
+count.value += 1;
+count.update();
+```
+
+update date only
+```dart
+count.value += 1;
+```
+
+#### CatView
+Listen for data changes and respond to data to the view
+```dart
+CatView.render(controller.count, () {
+  return Text(
+    controller.count.value.toString(),
+  );
+})
+```
+
+#### CatController
+a simple controller
+```dart
+class MyController extends CatController {
+  CatRx<int> count = CatRx<int>(0);
+  
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
+    print("close");
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    print("init");
+  }
+}
+```
+
+`onClose` and `onInit` not actively called, it's just an overload. You can call these two methods in `initState` and `dispose` of the page respectively
+
+```dart
+
+class TemplatePageState extends State<TemplatePage> {
+  MyController controller = MyController();
+  
+  @override
+  void initState() {
+    super.initState();
+    
+    controller.onInit();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("xxxx"),
+      ),
+    );
+  }
+  
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    
+    controller.onClose();
+  }
+}
+```
