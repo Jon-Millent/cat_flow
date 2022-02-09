@@ -1,6 +1,10 @@
 # CatFlow
 Flutter 超轻量级状态管理
 
+## 语言
+[English](https://github.com/Jon-Millent/cat_flow/blob/main/README.md)
+[中文](https://github.com/Jon-Millent/cat_flow/blob/main/README.zh-cn.md)
+
 ## 特性
 
 * 轻量
