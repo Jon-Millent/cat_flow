@@ -43,11 +43,15 @@ class MyController extends CatController {
 // ...
 Widget build(BuildContext context) {
   //...
-  CatView.render(controller.count, () {
+  CatHook.useEffect(() {
+    print("count change");
     return Text(
       controller.count.value.toString(),
+      style: TextStyle(
+          fontSize: 80
+      ),
     );
-  });
+  }, [controller.count])
   //...
   floatingActionButton: FloatingActionButton(
     onPressed: () {
