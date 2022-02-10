@@ -35,19 +35,35 @@ class _Test1PageState extends State<Test1Page> {
 
             CatHook.useEffect(() {
               print("count change");
-              return Text(
-                controller.count.value.toString(),
-                style: TextStyle(
-                  fontSize: 80
-                ),
+              return Column(
+                children: [
+                  Text(
+                    controller.count.value.toString(),
+                    style: TextStyle(
+                        fontSize: 80
+                    ),
+                  ),
+                  Text(
+                    controller.age.value.toString(),
+                    style: TextStyle(
+                        fontSize: 80
+                    ),
+                  )
+                ],
               );
-            }, [controller.count, controller.people]),
+            }, [controller.count, controller.people, controller.age]),
 
             CupertinoButton(
               onPressed: () {
                 controller.changePeople();
               },
               child: const Text("change people"),
+            ),
+            CupertinoButton(
+              onPressed: () {
+                controller.changeAge();
+              },
+              child: const Text("change age"),
             )
           ],
         ),

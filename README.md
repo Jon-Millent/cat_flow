@@ -74,12 +74,12 @@ CatRx<bool> isLoading = CatRx<bool>(false);
 update date and view
 ```dart
 count.value += 1;
-count.update();
 ```
 
-update date only
+If your data is an object, call update manually after modification
 ```dart
-count.value += 1;
+foo.value.name = "bar";
+foo.update();
 ```
 
 #### CatHook

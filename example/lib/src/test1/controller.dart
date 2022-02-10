@@ -7,11 +7,15 @@ class SomeMode {
 
 class Test1PageController extends CatController {
   CatRx<int> count = CatRx<int>(0);
+  CatRx<int> age = CatRx<int>(12);
   CatRx<SomeMode> people = CatRx<SomeMode>(SomeMode());
+
+  void changeAge() {
+    age.value++;
+  }
 
   void changeCount() {
     count.value++;
-    count.update();
   }
 
   void changePeople() {

@@ -6,7 +6,16 @@ class CatRx<T> {
     key.value ++;
   }
 
-  T value;
+  late T _value;
 
-  CatRx(this.value);
+  T get value => _value;
+
+  set value (T newVal) {
+    _value = newVal;
+    update();
+  }
+
+  CatRx (T value) {
+    _value = value;
+  }
 }

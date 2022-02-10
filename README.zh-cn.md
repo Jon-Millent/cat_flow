@@ -73,12 +73,12 @@ CatRx<bool> isLoading = CatRx<bool>(false);
 更新数据和视图
 ```dart
 count.value += 1;
-count.update();
 ```
 
-仅仅更新视图
+如果你的数据是对象，请在修改后手动调用update
 ```dart
-count.value += 1;
+foo.value.name = "bar";
+foo.update();
 ```
 
 #### CatHook
