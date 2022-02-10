@@ -5,6 +5,7 @@ class CatRx<T> {
   void update() {
     key.value ++;
   }
+
   T value;
 
   CatRx(this.value);

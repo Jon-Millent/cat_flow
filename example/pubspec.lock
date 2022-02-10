@@ -109,6 +109,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.7.0"
+  multi_value_listenable_builder:
+    dependency: transitive
+    description:
+      name: multi_value_listenable_builder
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.2"
   path:
     dependency: transitive
     description:

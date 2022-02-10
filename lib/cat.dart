@@ -1,5 +1,5 @@
 library cat_flow;
 
-export 'core/controller.dart';
-export 'core/rx.dart';
-export 'core/view.dart';
+export 'package:cat_flow/core/controller.dart';
+export 'package:cat_flow/core/rx.dart';
+export 'package:cat_flow/core/hooks.dart';

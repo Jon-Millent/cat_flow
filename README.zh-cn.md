@@ -81,14 +81,20 @@ count.update();
 count.value += 1;
 ```
 
-#### CatView
-监听数据变化并响应数据到视图
+#### CatHook
+
+#### useEffect
+Listen for data changes and respond to data to the view
 ```dart
-CatView.render(controller.count, () {
-  return Text(
-    controller.count.value.toString(),
-  );
-})
+CatHook.useEffect(() {
+    print("count change");
+    return Text(
+        controller.count.value.toString(),
+        style: TextStyle(
+          fontSize: 80
+        ),
+    );
+}, [controller.count, controller.people])
 ```
 
 #### CatController

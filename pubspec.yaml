@@ -1,6 +1,6 @@
 name: cat_flow
 description: flutter super lightweight state management
-version: 0.0.1
+version: 1.0.1
 homepage: https://github.com/Jon-Millent/cat_flow
 
 environment:
@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  multi_value_listenable_builder: ^0.0.2
 
 dev_dependencies:
   flutter_test:

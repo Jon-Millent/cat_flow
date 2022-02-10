@@ -1,4 +1,4 @@
-import 'package:cat_flow/core/view.dart';
+import 'package:cat_flow/core/hooks.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'controller.dart';
@@ -32,7 +32,8 @@ class _Test1PageState extends State<Test1Page> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CatView.render(controller.count, () {
+
+            CatHook.useEffect(() {
               print("count change");
               return Text(
                 controller.count.value.toString(),
@@ -40,13 +41,7 @@ class _Test1PageState extends State<Test1Page> {
                   fontSize: 80
                 ),
               );
-            }),
-            CatView.render(controller.people, () {
-              print("people change");
-              final people = controller.people.value;
-
-              return Text("name: ${people.name}, age: ${people.age}");
-            }),
+            }, [controller.count, controller.people]),
 
             CupertinoButton(
               onPressed: () {
