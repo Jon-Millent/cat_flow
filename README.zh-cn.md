@@ -84,7 +84,8 @@ count.value += 1;
 #### CatHook
 
 #### useEffect
-Listen for data changes and respond to data to the view
+监听数据更新，响应到视图
+
 ```dart
 CatHook.useEffect(() {
     print("count change");
