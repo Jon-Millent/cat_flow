@@ -35,7 +35,6 @@ class MyController extends CatController {
 
   void changeCount() {
     count.value++;
-    count.update();
   }
 }
 
